@@ -37,20 +37,6 @@ public class FromLostFoundToSearch {
 			return;
 		}
 	}
-	
-//	private <T> T convertToLostOrFoundDB(LostFoundDto lostFound) {
-//		if (lostFound.getTypePost()) {
-//			return (T) FoundToSearch.builder().id(lostFound.getId()).type(lostFound.getType()).breed(lostFound.getBreed())
-//					.sex(lostFound.getSex()).userLogin(lostFound.getUserLogin()).address(lostFound.getAddress())
-//					.coordinates(lostFound.getCoordinates())
-//					.tags(lostFound.getTags().stream().reduce((a, b) -> a + " " + b).get()).build();
-//		} else {
-//			return (T) LostToSearch.builder().id(lostFound.getId()).type(lostFound.getType())
-//					.breed(lostFound.getBreed()).sex(lostFound.getSex()).userLogin(lostFound.getUserLogin())
-//					.address(lostFound.getAddress()).coordinates(lostFound.getCoordinates())
-//					.tags(lostFound.getTags().stream().reduce((a, b) -> a + " " + b).get()).build();
-//		}
-//	}
 
 	private LostToSearch convertToLostDB(LostFoundDto lostFound) {
 		return LostToSearch.builder().id(lostFound.getId()).type(lostFound.getType()).breed(lostFound.getBreed())
@@ -79,5 +65,19 @@ public class FromLostFoundToSearch {
 				.userLogin(lostFoundSearch.getUserLogin()).address(lostFoundSearch.getAddress())
 				.coordinates(lostFoundSearch.getCoordinates()).tags(lostFoundSearch.getTags()).build();
 	}
+
+//	private <T> T convertToLostOrFoundDB(LostFoundDto lostFound) {
+//		if (lostFound.getTypePost()) {
+//			return (T) FoundToSearch.builder().id(lostFound.getId()).type(lostFound.getType()).breed(lostFound.getBreed())
+//					.sex(lostFound.getSex()).userLogin(lostFound.getUserLogin()).address(lostFound.getAddress())
+//					.coordinates(lostFound.getCoordinates())
+//					.tags(lostFound.getTags().stream().reduce((a, b) -> a + " " + b).get()).build();
+//		} else {
+//			return (T) LostToSearch.builder().id(lostFound.getId()).type(lostFound.getType())
+//					.breed(lostFound.getBreed()).sex(lostFound.getSex()).userLogin(lostFound.getUserLogin())
+//					.address(lostFound.getAddress()).coordinates(lostFound.getCoordinates())
+//					.tags(lostFound.getTags().stream().reduce((a, b) -> a + " " + b).get()).build();
+//		}
+//	}
 
 }
